@@ -16,8 +16,10 @@ import fs from 'fs'
                 resource_type:"auto"
             })
             // file has been uploaded successfull
-            console.log("uploaded successfull", response.url);
-            return response;
+            // console.log("uploaded successfull", response.url);
+            // return response;
+            fs.unlinkSync(localFilePath)
+             return response;
         }
         catch(error){
             fs.unlinkSync(localFilePath) // remove the locally saved temporary file as the uploaded operation go failed
